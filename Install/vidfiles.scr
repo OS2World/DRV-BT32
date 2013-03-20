@@ -1,0 +1,8 @@
+/*  Total Number of Files to copy                                            */
+/*  Change this number to match the number of files you are copying          */
+    2
+
+/* Disk# Group# Dest# Source# Filename         Comment                       */
+
+    0      16     2      0    "CARDINFO.DLL"
+    0      16     2      0    "StBT_VSD.DLL"   /* You must copy this file    */

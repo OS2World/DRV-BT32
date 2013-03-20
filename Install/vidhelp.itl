@@ -1,0 +1,17 @@
+:userdoc.
+:prolog.
+:title.BTTV Driver Install Help
+:eprolog.
+:toc.
+:body.
+.******************** HELP FOR HOW MANY ADAPTERS ***********************
+:h1 res=260.Help for Selecting Number of Devices
+.*
+:p.Use this window to select the number of BTTV compatible devices
+that you have installed in your system. The maximum number of BTTV
+devices supported by MMPM/2 is one.
+:p.
+If you select zero, then you will de-install all BTTV devices that have
+been previously installed by MMPM/2.
+.*********************************************************************
+:euserdoc.

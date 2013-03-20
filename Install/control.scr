@@ -1,0 +1,94 @@
+/*--------------------------------------------------------------------------*/
+/* Name        : CONTROL.SCR                                                */
+/* Description : MINSTALL Installation control file                         */
+/* Author      : Stefan Milcke                                              */
+/*--------------------------------------------------------------------------*/
+/* Related Files: CARDINFO.C (CARDINFO.DLL Source file) Adapter information */
+/*                VIDFILES.SCR - file list control file                     */
+/*--------------------------------------------------------------------------*/
+/* History                                                                  */
+/* When       Who   What                                                    */
+/*--------------------------------------------------------------------------*/
+package="BTTV"
+codepage=437
+
+/*--------------------------------------------------------------------------*/
+/* Files to install control file                                            */
+/*--------------------------------------------------------------------------*/
+filelist="vidfiles.scr"
+
+/*--------------------------------------------------------------------------*/
+/* Number of installable units defined here                                 */
+/*--------------------------------------------------------------------------*/
+groupcount=2
+
+/*--------------------------------------------------------------------------*/
+/* Number of Diskettes and the User prompts during install                  */
+/*--------------------------------------------------------------------------*/
+munitcount=1                          /* Number of diskettes                */
+
+medianame="BTTV Adapter Diskette "    /* Disk 1 prompt text during install  */
+
+/*--------------------------------------------------------------------------*/
+/* Destination directories as used in install control file as referenced by */
+/* the 'filelist' keyword.                                                  */
+/*--------------------------------------------------------------------------*/
+sourcedir="\\"= 0                     /* Source Directories                 */
+
+destindir="\\MMOS2\\"= 0              /* Destination Directories            */
+destindir="\\MMOS2\\DLL\\"= 2
+destindir="\\MMOS2\\MOVIES\\"= 3
+destindir="\\MMOS2\\INSTALL\\"= 4
+destindir="\\MMOS2\\DSP\\"= 5
+destindir="\\MMOS2\\MACROS\\"= 6
+destindir="\\MMOS2\\HELP\\"= 7
+destindir="\\MMOS2\\SOUNDS\\"= 9
+
+
+/*--------------------------------------------------------------------------*/
+/*  Base file to be run after Adapter Installed.                            */
+/*  This will update the user's Multimedia Folder with new information      */
+/*  Do not change this group.                                               */
+/*--------------------------------------------------------------------------*/
+ssgroup=0
+ssname="mmbase"
+ssversion="1.1.000"
+/*
+ * Note: 'sstermdll' and 'sstermdllentry' are used as the user DLL is to be
+ *        called after the installation has taken place.
+ */
+sstermdll="ITERM.DLL"
+sstermdllentry="ITermEntry"
+
+
+/*--------------------------------------------------------------------------*/
+/* Installable Units                                                        */
+/*--------------------------------------------------------------------------*/
+/* Notes:                                                                   */
+/*                                                                          */
+/*   ssgroup    - Installable unit identifier as reference by the 'files    */
+/*                to install' control file as specified in 'filelist'       */
+/*                keyword.                                                  */
+/*   ssname     - Installable unit's name as it will appear in the MINSTALL */
+/*                window list.                                              */
+/*   ssversion  - Installable unit's version number in format "x.x.x"       */
+/*   sssize     - Total file size of installable unit.                      */
+/*                                                                          */
+/*   ssdllinputparms - Match id to use in CARDINFO.DLL. This will allow     */
+/*                device driver configuration, config.sys and INI file      */
+/*                updates.                                                  */
+/*   ssdll      - DLL to call for user install routine (must be used in     */
+/*                conjunction with the 'ssdllentry' keyword.                */
+/*   ssdllentry - Function entry point in the 'ssdll' DLL to call for user  */
+/*                install routine.                                          */
+/*--------------------------------------------------------------------------*/
+ssgroup=16
+ssname="BTTV compatible adapter"
+ssversion="0.7.0"
+sssize=2
+ssicon="_card.ico"
+ssdll="genin.dll"
+ssdllentry="InitGenin"
+ssdllinputparms="33"
+ssselect="YES"
+/* ssinich="StBTSTIN.scr" */

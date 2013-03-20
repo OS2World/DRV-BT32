@@ -1,0 +1,85 @@
+/* $Id: cardinfo.rc,v 1.5 2003/07/11 22:09:50 smilcke Exp $ */
+
+/************************ START OF SPECIFICATIONS ***************************/
+/*                                                                          */
+/* SOURCE FILE NAME:  CARDINFO.RC                                           */
+/*                                                                          */
+/* DESCRIPTIVE NAME:  Resource file that desribes the video capture adapter */
+/*                                                                          */
+/* COPYRIGHT:                                                               */
+/*              Copyright (c) IBM Corporation  1993                         */
+/*                        All Rights Reserved                               */
+/*                                                                          */
+/* STATUS:  Workshop toolkit 1.0                                            */
+/*                                                                          */
+/* DESCRIPTION:                                                             */
+/* This is a sample data file that supplies information about a video       */
+/* capture adapter that will be installed with IBM's Generic Installation   */
+/* DLL.  This particular sample data file gives information about the       */
+/* Creative Labs Video Blaster adapter.  The fields in this file are        */
+/* described in more detail in the documentation.                           */
+/* The maximum length of each field is listed in ()                         */
+/*************************** END OF SPECIFICATIONS **************************/
+
+RCDATA 1
+BEGIN
+   "1"                          /* Number of adapters in this rc file      */
+END
+
+RCDATA 10
+BEGIN
+   "33",                        /* ID number of this adapter                */
+   "vca"                        /* Type of adapter                          */
+END
+
+RCDATA 11
+BEGIN
+   "4",                        /* Max number of adapters (2 chars)  (6 max)  */
+   "VIDHELP.hlp",              /* Helpfile name (19 chars)                   */
+   "\0",                       /* Adapter specific dll name (19 chars)       */
+   "\0",                       /* Adapter specific dll entry point (39 chars)*/
+
+   /**** Data for CONFIG.SYS **/
+   "1",                        /* Number of CONFIG.SYS lines (1 char)        */
+   "DEVICE=*PATH*\\VCSHDD.SYS",
+                               /* CONFIG.SYS Line 1                          */
+                               /* (255 chars after token substitution)       */
+
+   /**** Data for INI File ****/
+   "1",                        /* Number of Drivers to Install (1 char)      */
+   "BTTV",                     /* Product name (39 chars)                    */
+   "0.7.0",                    /* Version of the adapter's software (6 chars)*/
+   "STBTTV",                   /* PDD Name  (5 chars)                        */
+   "MDM",                      /* MCD table name (19 chars)                  */
+   "\0"                        /* VSD table name (19 chars)                  */
+END
+
+RCDATA 12
+BEGIN
+   /**** DIGITAL VIDEO Driver ****/
+   "STMBTDIGVIDDEV",           /* Installname (17 chars)                     */
+   "12",                       /* Device type (3 chars)                      */
+   "1",                        /* Device flag (3 chars)                      */
+   "SVMC",                     /* MCD driver name (19 chars)                 */
+   "StBT_VSD",                 /* VSD driver name (19 chars)                 */
+   "3",                        /* Share Type (3 chars)                       */
+   "BTTV",                     /* Resource name (17 chars)                   */
+   "10",                       /* # of Resource units (2 chars)              */
+   "2",                        /* # of Resource classes (2 chars)            */
+   "10","1",                   /* Resource classes (2 char each)             */
+   "0",                        /* # Valid resource class combos (2 chars)    */
+   /* No combos */             /* Valid resource class combos (2 chars each) */
+   "1",                        /* # of connectors  (2 chars)                 */
+   "3","","1",                 /* Connectors (2 chars), (17 chars), (2 chars)*/
+   "0",                        /* # of extensions (2 chars)                  */
+   /* no extension names */    /* Extension names  (3 chars each)            */
+   "\0",                       /* Extended attribute (255 chars)             */
+   "BTTV",                     /* Alias Name (17 chars)                      */
+   "\0",                       /* Device Specific Parameters (255 chars)     */
+END
+
+RCDATA 19
+BEGIN
+   // Prompts for the User
+   "0",                        /* # Number of prompts to ask user (3 chars)  */
+END
